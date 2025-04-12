@@ -37,7 +37,7 @@ function App() {
         <input type="file" ref={uploadRef} style={{display:"none"}} onChange={(event)=>setFile(event.target.files[0])}/>
       </div>
       <div>
-        <a href='{res}'>{res}</a>
+        <a href={res}>{res}</a>
       </div>
     </div>
   )
