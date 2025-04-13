@@ -1,0 +1,7 @@
+
+
+1. Blog app. Code with dawid es una opción viable. Crear tu propio blog haciendo la configuración de la base de datos de MongoDB y usando el ide "trae" y probando el ide de Google Firebase Studio. 
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+2. Aplicación de oposiciones. Te permite introducir todas las preguntas tipo test de un temario y todas las correcciones y una IA te genera el examen tipo test (poniendo las preguntas de forma aleatoria pero teniendo cuidado con cuales son las respuestas correctas y te lo corrige, con opción de corregirlo cuando lo hayas terminado o mientras lo vas haciendo (después de contestar una pregunta te indica si está bien o mal). 
