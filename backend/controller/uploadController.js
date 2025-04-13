@@ -5,15 +5,7 @@ export const UploadController = async (req, res) => {
     try{
 
         dotenv.config();
-        // Determinar la URL del backend según el entorno
-        let backendUrl = process.env.BACKEND_URL;
-        
-        // Si estamos en producción (Render), usar la URL de la aplicación
-        if (process.env.NODE_ENV === 'production') {
-            // Usar la URL de Render o la URL base de la solicitud
-            backendUrl = 'https://filelance-tfg.onrender.com';
-        }
-        
+        const backendUrl = process.env.BACKEND_URL;
         //functionality to upload files to database
         const fileObject = {
             path: req.file.path,
@@ -45,21 +37,7 @@ export const DownloadController = async (req, res) => {
         if(!file){
             return res.status(404).json({message:"File not found"});
         }
-        // Verificar si el archivo existe antes de intentar descargarlo
-        const fs = await import('fs');
-        const path = await import('path');
-        
-        // Asegurar que usamos rutas absolutas
-        const filePath = path.default.isAbsolute(file.path) 
-            ? file.path 
-            : path.default.join(process.cwd(), file.path);
-            
-        console.log('Intentando descargar archivo:', filePath);
-        
-        if (!fs.existsSync(filePath)) {
-            return res.status(404).json({message:"Archivo físico no encontrado: " + filePath});
-        }
-        res.download(filePath, file.name);
+        res.download(file.path, file.name);
         
     }catch(err){
         return res.status(500).json({message:err.message});
