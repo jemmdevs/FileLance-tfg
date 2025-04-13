@@ -4,9 +4,11 @@
   "main": "index.js",
   "scripts": {
     "start": "node backend/index.js",
+    "server": "nodemon backend/index.js",
     "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend",
     "render-postbuild": "npm run build",
-    "render-start": "node backend/index.js"
+    "render-start": "node backend/index.js",
+    "dev": "nodemon backend/index.js"
   },
   "type": "module",
   "keywords": [],
